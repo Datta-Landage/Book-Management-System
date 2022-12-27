@@ -90,8 +90,8 @@ const userLogin = async function (req, res) {
         // using jwt for creating token
         let token = jwt.sign(
             {
-                userId: userid._id.toString(),
-                exp: Math.floor(Date.now() / 1000) + (60 * 360)
+                userId: userid._id.toString(),  
+                exp: Math.floor(Date.now() / 1000) + (60*360)
             },
             "Project3-Group24"
         );
