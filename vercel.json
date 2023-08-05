@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "builds": [{ "src": "src/index.js", "use": "@vercel/node" }],
-  "routes": [
+  "name": "hipal",
+  "builds": [
     {
       "src": "src/index.js",
-      "dest": "/"
+      "use": "@vercel/node",
+      "config": { "includeFiles": ["src/**"] }
     }
-  ]
+  ],
+  "routes": [{ "src": "/(.*)", "dest": "src/index.js" }]
 }
